@@ -21,3 +21,7 @@ show create table customers;
 select * from customers;
 
 delete from customers where id in ("joko", "budi");
+
+SELECT * FROM customers ORDER BY id ASC LIMIT 1 OFFSET 1;
+
+SELECT * FROM customers WHERE name = "budi"
