@@ -14,3 +14,12 @@ model sample {
   id String @id
   name String
 }
+
+model Customer {
+  id       String    @id @db.VarChar(100)
+  name     String    @db.VarChar(100)
+  email    String    @unique @db.VarChar(100)
+  phone    String    @unique @db.VarChar(100)
+
+  @@map("customers")
+}
