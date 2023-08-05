@@ -94,3 +94,15 @@ values ('joko', 'Comment 1', 'Sample comment 1'),
 
 insert into comments (customer_id, title, description)
 values ('xxx', 'xxx', 'xxx');
+
+create table likes (
+    customer_id varchar(100) not null,
+    product_id varchar(100) not null,
+    primary key (customer_id, product_id),
+    constraint likes_customer_id_fk foreign key (customer_id) references customers (id),
+    constraint likes_product_id_fk foreign key (product_id) references products (id)
+) engine innodb;
+
+show create table likes;
+
+select * from likes;
