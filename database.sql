@@ -106,3 +106,28 @@ create table likes (
 show create table likes;
 
 select * from likes;
+
+SELECT * FROM customers;
+
+show create table customers;
+
+create table _loves (
+    A varchar(100) not null,
+    B varchar(100) not null,
+    primary key (A, B),
+    constraint customer_loves_fk foreign key (A) references customers (id),
+    constraint product_loves_fk foreign key (B) references products (id)
+) engine innodb;
+
+select * from _loves;
+
+DELETE from _loves where A = "lulu";
+
+CREATE DATABASE belajar_prisma_migrate;
+USE belajar_prisma_migrate;
+
+SHOW TABLES;
+
+DESCRIBE sample;
+DESCRIBE _prisma_migrations;
+SELECT * FROM _prisma_migrations;

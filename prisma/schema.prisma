@@ -11,8 +11,9 @@ datasource db {
 }
 
 model sample {
-  id String @id
-  name String
+  id String @id @db.VarChar(100)
+  name String @db.VarChar(100)
+  description String? @db.Text
 }
 
 model Customer {
@@ -38,11 +39,11 @@ model Wallet {
 }
 
 model Product {
-  id       String @id
-  name     String
+  id       String @id @db.VarChar(100)
+  name     String @db.VarChar(100)
   price    Int   
   stock    Int   
-  category String
+  category String @db.VarChar(100)
   likedBy Like[]
   lovesBy Customer[] @relation("loves")
 
